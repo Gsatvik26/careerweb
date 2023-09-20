@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Class-wise Interest Survey - Career Wizards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .survey-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        select, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        select {
+            background-color: #f8f8f8;
+        }
+
+        .hidden {
+            display: none;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="survey-container">
+        <h1>Class-wise Interest Survey</h1>
+        <form id="class-form">
+            <label for="class">Select your class:</label>
+            <select id="class" name="class" onchange="showSurveyForm()">
+                <option value="">Select</option>
+                <option value="8">8th</option>
+                <option value="9">9th</option>
+                <option value="10">10th</option>
+                <option value="11">11th</option>
+                <option value="12">12th</option>
+            </select>
+        </form>
+        
+        <div id="survey-forms">
+            
+            <form id="grade-8-form" class="hidden">
+                <h2>Interest Survey for 8th Grade</h2>
+                <label for="math8">Mathematics:</label>
+                <input type="text" id="math8" name="math8"><br><br>
+
+                <label for="science8">Science:</label>
+                <input type="text" id="science8" name="science8"><br><br>
+
+                <label for="history8">History:</label>
+                <input type="text" id="history8" name="history8"><br><br>
+
+                <label for="language8">Language:</label>
+                <input type="text" id="language8" name="language8"><br><br>
+
+                <label for="language8">Other Interests</label>
+                <input type="text" id="language8" name="language8"><br><br>
+
+              
+
+                <button class="submit-button" onclick="submitForm('8')">Submit</button>
+            </form>
+            
+           
+            <form id="grade-9-form" class="hidden">
+                <h2>Interest Survey for 9th Grade</h2>
+                <label for="math9">Mathematics:</label>
+                <input type="text" id="math9" name="math9"><br><br>
+
+                <label for="science9">Science:</label>
+                <input type="text" id="science9" name="science9"><br><br>
+
+                <label for="history9">History:</label>
+                <input type="text" id="history9" name="history9"><br><br>
+
+                <label for="language9">Language:</label>
+                <input type="text" id="language9" name="language9"><br><br>
+
+                <label for="language9">Other Interests</label>
+                <input type="text" id="language9" name="language9"><br><br>
+
+
+                <button class="submit-button" onclick="submitForm('9')">Submit</button>
+            </form>
+            
+            <!-- 10th Grade Survey -->
+            <form id="grade-10-form" class="hidden">
+                <h2>Interest Survey for 10th Grade</h2>
+                <label for="math10">Mathematics:</label>
+                <input type="text" id="math10" name="math10"><br><br>
+
+                <label for="science10">Science:</label>
+                <input type="text" id="science10" name="science10"><br><br>
+
+                <label for="history10">History:</label>
+                <input type="text" id="history10" name="history10"><br><br>
+
+                <label for="language10">Language:</label>
+                <input type="text" id="language10" name="language10"><br><br>
+
+                <label for="language10">Other Interests</label>
+                <input type="text" id="language10" name="language10"><br><br>
+
+                
+
+                <button class="submit-button" onclick="submitForm('10')">Submit</button>
+            </form>
+            <!-- 8th Grade Survey -->
+            <!-- ... (previous grade forms) ... -->
+            
+            <!-- 11th Grade Survey -->
+            <form id="grade-11-form" class="hidden">
+                <h2>Interest Survey for 11th Grade</h2>
+                <label for="stream11">Select your stream:</label>
+                <select id="stream11" name="stream11" onchange="showStreamFields('11')">
+                    <option value="">Select</option>
+                    <option value="science">Science</option>
+                    <option value="commerce">Commerce</option>
+                    <option value="arts">Arts</option>
+                </select>
+                
+                <div id="science-fields-11" class="hidden">
+                    <label for="physics11">Physics:</label>
+                    <input type="text" id="physics11" name="physics11"><br><br>
+
+                    <label for="chemistry11">Chemistry:</label>
+                    <input type="text" id="chemistry11" name="chemistry11"><br><br>
+
+                    <label for="math11">Mathematics:</label>
+                    <input type="text" id="math11" name="math11"><br><br>
+
+                    <label for="language11">Other Interests</label>
+                    <input type="text" id="language11" name="language11"><br><br>
+
+                    <button class="submit-button" onclick="submitForm('8')">Submit</button>
+                </div>
+                
+                <div id="commerce-fields-11" class="hidden">
+                    <label for="accounting11">Accounting:</label>
+                    <input type="text" id="accounting11" name="accounting11"><br><br>
+
+                    <label for="economics11">Economics:</label>
+                    <input type="text" id="economics11" name="economics11"><br><br>
+
+                    <label for="business-studies11">Business Studies:</label>
+                    <input type="text" id="business-studies11" name="business-studies11"><br><br>
+
+                    <label for="language11">Other Interests</label>
+                    <input type="text" id="language11" name="language11"><br><br>
+
+                    <button class="submit-button" onclick="submitForm('8')">Submit</button>
+                </div>
+                
+                <div id="arts-fields-11" class="hidden">
+                    <label for="history11">History:</label>
+                    <input type="text" id="history11" name="history11"><br><br>
+
+                    <label for="sociology11">Sociology:</label>
+                    <input type="text" id="sociology11" name="sociology11"><br><br>
+
+                    <label for="literature11">Literature:</label>
+                    <input type="text" id="literature11" name="literature11"><br><br>
+
+                    <label for="language11">Other Interests</label>
+                    <input type="text" id="language11" name="language11"><br><br>
+
+                    <button class="submit-button" onclick="submitForm('8')">Submit</button>
+                </div>
+            </form>
+            
+            <!-- 12th Grade Survey -->
+            <form id="grade-12-form" class="hidden">
+                <h2>Interest Survey for 12th Grade</h2>
+                <label for="stream12">Select your stream:</label>
+                <select id="stream12" name="stream12" onchange="showStreamFields('12')">
+                    <option value="">Select</option>
+                    <option value="science">Science</option>
+                    <option value="commerce">Commerce</option>
+                    <option value="arts">Arts</option>
+                </select>
+                
+                <div id="science-fields-12" class="hidden">
+                    <label for="physics12">Physics:</label>
+                    <input type="text" id="physics12" name="physics12"><br><br>
+
+                    <label for="chemistry12">Chemistry:</label>
+                    <input type="text" id="chemistry12" name="chemistry12"><br><br>
+
+                    <label for="math12">Mathematics:</label>
+                    <input type="text" id="math12" name="math12"><br><br>
+
+                    <label for="language12">Other Interests</label>
+                    <input type="text" id="language12" name="language12"><br><br>
+
+                    <button class="submit-button" onclick="submitForm('8')">Submit</button>
+                </div>
+                
+                <div id="commerce-fields-12" class="hidden">
+                    <label for="accounting12">Accounting:</label>
+                    <input type="text" id="accounting12" name="accounting12"><br><br>
+
+                    <label for="economics12">Economics:</label>
+                    <input type="text" id="economics12" name="economics12"><br><br>
+
+                    <label for="business-studies12">Business Studies:</label>
+                    <input type="text" id="business-studies12" name="business-studies12"><br><br>
+
+                    <label for="language12">Other Interests</label>
+                    <input type="text" id="language12" name="language12"><br><br>
+
+                    <button class="submit-button" onclick="submitForm('8')">Submit</button>
+                </div>
+                
+                <div id="arts-fields-12" class="hidden">
+                    <label for="history12">History:</label>
+                    <input type="text" id="history12" name="history12"><br><br>
+
+                    <label for="sociology12">Sociology:</label>
+                    <input type="text" id="sociology12" name="sociology12"><br><br>
+
+                    <label for="literature12">Literature:</label>
+                    <input type="text" id="literature12" name="literature12"><br><br>
+
+                    <label for="language12">Other Interests</label>
+                    <input type="text" id="language12" name="language12"><br><br>
+
+                    <button class="submit-button" onclick="window.location.href = 'va.html';">Submit</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <p align="center"><button class="submit-button" onclick="window.location.href = 'va.html';">Next</button></p>
+    <script>
+        function showSurveyForm() {
+            const selectedClass = document.getElementById("class").value;
+            const surveyForms = document.getElementById("survey-forms").querySelectorAll("form");
+            
+            // Hide all survey forms
+            surveyForms.forEach(form => {
+                form.classList.add("hidden");
+            });
+            
+            // Show the selected survey form
+            const selectedForm = document.getElementById(`grade-${selectedClass}-form`);
+            if (selectedForm) {
+                selectedForm.classList.remove("hidden");
+            }
+        }
+        
+        function showStreamFields(grade) {
+            const selectedStream = document.getElementById(`stream${grade}`).value;
+            const streamFields = document.getElementById(`survey-forms`).querySelectorAll(`#${selectedStream}-fields-${grade}`);
+            
+            // Hide all stream fields
+            streamFields.forEach(field => {
+                field.classList.add("hidden");
+            });
+            
+            // Show the fields for the selected stream
+            const selectedStreamFields = document.getElementById(`${selectedStream}-fields-${grade}`);
+            if (selectedStreamFields) {
+                selectedStreamFields.classList.remove("hidden");
+            }
+        }
+    </script>
+</body>
+</html>

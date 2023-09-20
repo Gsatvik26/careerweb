@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>8th Grade Aptitude Test</title>
+    <style>
+        /* Add your CSS styles here to format the test page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        .test-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Add more CSS styles as needed */
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>8th Grade Aptitude Test</h1>
+
+        <!-- Question 1 -->
+        <p>1. What is the capital of France?</p>
+        <input type="radio" name="q1" value="a"> a) Paris<br>
+        <input type="radio" name="q1" value="b"> b) London<br>
+        <input type="radio" name="q1" value="c"> c) Berlin<br>
+
+        <!-- Question 2 -->
+        <p>2. What is 12 x 8?</p>
+        <input type="radio" name="q2" value="a"> a) 96<br>
+        <input type="radio" name="q2" value="b"> b) 108<br>
+        <input type="radio" name="q2" value="c"> c) 72<br>
+
+        <!-- Add more questions -->
+        <p>3. What is 120 x 5 x 2?</p>
+        <input type="radio" name="q3" value="a"> a) 1100<br>
+        <input type="radio" name="q3" value="b"> b) 1200<br>
+        <input type="radio" name="q3" value="c"> c) 900<br>
+
+        <!-- Repeat the pattern for more questions -->
+
+        
+        <br>
+        <!-- Submit Button -->
+        <button id="submit">Submit</button>
+
+        <!-- Display Result -->
+        <div id="result"></div>
+    </div>
+
+    <script>
+        // JavaScript for scoring the test goes here
+        document.getElementById('submit').addEventListener('click', calculateScore);
+
+        function calculateScore() {
+            const answers = {
+                q1: document.querySelector('input[name="q1"]:checked'),
+                q2: document.querySelector('input[name="q2"]:checked'),
+                // Add more question IDs and corresponding input selections as needed
+                q10: document.querySelector('input[name="q10"]:checked'),
+            };
+
+            let score = 0;
+
+            // Calculate score based on correct answers
+            if (answers.q1 && answers.q1.value === 'a') {
+                score++;
+            }
+            if (answers.q2 && answers.q2.value === 'a') {
+                score++;
+            }
+            // Add more conditions for other questions
+
+            // Display the result
+            const result = document.getElementById('result');
+            result.innerHTML = `You scored ${score} out of ${Object.keys(answers).length}!`;
+
+            // You can add more logic to provide recommendations based on the score
+        }
+    </script>
+     <p align="center"><button class="submit-button" onclick="window.location.href = 'cp.html';">Next</button></p>
+</body>
+</html>

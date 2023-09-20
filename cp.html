@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Career Path Recommendation</title>
+    <style>
+        /* Add your CSS styles here to format the page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        .recommendation-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        /* Add more CSS styles as needed */
+    </style>
+</head>
+<body>
+    <div class="recommendation-container">
+        <h1>Career Path Recommendation</h1>
+
+        <!-- Display test score and interests -->
+        <p>Your test score: <span id="score">0</span></p>
+        <p>Your interests: <span id="interests">Undecided</span></p>
+
+        <!-- Suggested career path -->
+        <p>Suggested Career Path: <span id="careerPath">Undecided</span></p>
+    </div>
+
+    <script>
+        // Simulated user responses to the aptitude test questions
+        const responses = {
+            q1: 'a', // Replace with the actual user's response
+            q2: 'b', // Replace with the actual user's response
+            // Add more questions and responses as needed
+        };
+
+        // Calculate the test score based on responses (replace with your scoring logic)
+        let testScore = 0;
+
+        if (responses.q1 === 'a') {
+            testScore += 2;
+        }
+        if (responses.q2 === 'b') {
+            testScore += 3;
+        }
+        // Add more scoring logic for other questions
+
+        // Get the user's interests (replace with actual user data)
+        const userInterests = ['Technology', 'Art', 'Science']; // Replace with actual interests
+
+        // Analyze the test score, interests, and other factors to suggest a career path
+        let careerPath = 'Undecided';
+
+        if (testScore >= 8 && userInterests.includes('Technology')) {
+            careerPath = 'Software Developer';
+        } else if (testScore >= 5 && userInterests.includes('Art')) {
+            careerPath = 'Graphic Designer';
+        } else if (testScore >= 6 && userInterests.includes('Science')) {
+            careerPath = 'Scientist';
+        } else {
+            careerPath = 'Explorer';
+        }
+
+        // Display the test score, interests, and suggested career path
+        const scoreElement = document.getElementById('score');
+        const interestsElement = document.getElementById('interests');
+        const careerPathElement = document.getElementById('careerPath');
+
+        scoreElement.textContent = testScore;
+        interestsElement.textContent = userInterests.join(', ');
+        careerPathElement.textContent = careerPath;
+    </script>
+</body>
+</html>

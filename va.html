@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Career Counseling Voice Assistant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+     
+  
+</head>
+<body>
+    <script>var BotStar={appId:"s9e9572ac-5deb-4a00-9c10-5aced7f8e17b",mode:"livechat"};!function(t,a){var e=function(){(e.q=e.q||[]).push(arguments)};e.q=e.q||[],t.BotStarApi=e;!function(){var t=a.createElement("script");t.type="text/javascript",t.async=1,t.src="https://widget.botstar.com/static/js/widget.js";var e=a.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}();}(window,document)</script>
+    <script src="https://widget.flowxo.com/embed.js" data-fxo-widget="eyJ0aGVtZSI6IiM2N2MxOGUiLCJ3ZWIiOnsiYm90SWQiOiI2NTA5YjQ3NzQ3NTBhYjBjNzg4ODI3MDEiLCJ0aGVtZSI6IiM2N2MxOGUifX0=" async defer></script>
+
+    
+    <div class="container">
+        <h1>Career Counseling Voice Assistant</h1>
+
+        <p>Say "Hello" to start the conversation.</p>
+
+        <button id="startButton">Start Listening</button>
+
+        <div id="output"></div>
+
+        <script>
+            const startButton = document.getElementById('startButton');
+            const output = document.getElementById('output');
+            let recognizing = false;
+            let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
+
+            recognition.continuous = true;
+            recognition.lang = 'en-US';
+
+            recognition.onstart = function () {
+                recognizing = true;
+                startButton.innerHTML = 'Listening...';
+            };
+
+            recognition.onend = function () {
+                recognizing = false;
+                startButton.innerHTML = 'Start Listening';
+            };
+
+            recognition.onresult = function (event) {
+                const transcript = event.results[event.results.length - 1][0].transcript;
+                output.innerHTML = transcript;
+
+                handleVoiceCommand(transcript);
+            };
+
+            startButton.addEventListener('click', function () {
+                if (recognizing) {
+                    recognition.stop();
+                } else {
+                    recognition.start();
+                }
+            });
+
+            function handleVoiceCommand(command) {
+                const lowerCommand = command.toLowerCase();
+
+                if (lowerCommand.includes('hello')) {
+                    output.innerHTML = 'Hello! How can I assist you with your career choices?';
+                } else if (lowerCommand.includes('career advice')) {
+                    output.innerHTML = 'Sure, I can help with career advice. Please provide more details about your interests and goals.';
+                } else {
+                    output.innerHTML = "I'm sorry, I couldn't understand that. Please try again.";
+                }
+            }
+        </script>
+        
+    </div>
+    <p align="center"><button class="submit-button" onclick="window.location.href = 'aptitude.html';">Next</button></p>
+</body>
+</html>
